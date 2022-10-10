@@ -1,0 +1,6 @@
+title: acronym
+author: Sarah Zeller
+version: 1.0.0
+contributes:
+  shortcodes:
+  - acronym.lua
