@@ -1,11 +1,5 @@
--- shortcode that provides a nicely formatted 'LaTeX' string
--- function bla1()
--- if quarto.doc.isFormat("html") then
---     return pandoc.Math('InlineMath', "\\LaTeX")
--- else 
---   return pandoc.Span('LaTeX')
--- end
--- end
+-- shortcode that provides a nicely formatted latex string;
+-- in all other cases, the acronym is simply printed 
 
 return {
   ["acro"] = function(args)
