@@ -1,0 +1,16 @@
+---
+title: "Acronym Example"
+format: 
+  html: 
+    self-contained: true
+  pdf: 
+    include-in-header:
+      text: \usepackage[nohyperlinks]{acronym}
+    include-before-body: lists/list-of-acronyms.tex
+  docx: default
+---
+
+# Example section 
+This is an example sentence in which I introduce the {{< acro GDP >}}.
+The {{< acro GDP >}} is an important concept in economics. 
+It summarizes the income of every household ($h$) in the economy.

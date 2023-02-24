@@ -1,0 +1,8 @@
+# List of abbreviations {.unnumbered}
+
+{{< acrosection begin >}}
+
+{{< acrodef GDP 'gross domestic product' >}}
+{{< acrodef h 'household' symbol >}}
+
+{{< acrosection end >}}
