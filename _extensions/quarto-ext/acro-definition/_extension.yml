@@ -1,0 +1,6 @@
+title: Definition of acronyms
+author: Sarah Zeller
+version: 1.0.0
+contributes:
+  shortcodes:
+    - acro-definition.lua

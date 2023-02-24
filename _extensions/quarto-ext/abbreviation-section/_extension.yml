@@ -1,0 +1,6 @@
+title: Abbreviation section
+author: Me
+version: 1.0.0
+contributes:
+  shortcodes:
+    - abbreviation-section.lua
