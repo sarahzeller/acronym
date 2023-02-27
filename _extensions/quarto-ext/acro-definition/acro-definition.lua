@@ -8,6 +8,7 @@ return {
     local my_explanation = pandoc.utils.stringify(args[2])
     local abbreviation_wo_math = string.gsub(my_abbreviation, "[\\_]", "")
     local abbreviation_wo_math = string.gsub(abbreviation_wo_math, "[\\]", "")
+    local abbreviation_wo_math_html = string.gsub(my_abbreviation, "[\\]", "")
 
     -- check out if there is any 3rd argument called "symbol"
     if args[3] == nil then
@@ -36,26 +37,18 @@ return {
            '\\acro{' .. my_abbreviation .. "}{" .. my_explanation .. "}"
            )
       end
-    -- for html
-    elseif quarto.doc.isFormat("html") then
-      if symbol == true then
-          return pandoc.RawInline(
-          "html",
-          "" .. my_abbreviation .. "   " .. my_explanation .. ""
-          )
-      else
-        return pandoc.RawInline(
-          "html",
-          "" .. my_abbreviation .. "   " .. my_explanation .. ""
-          )
-      end
-    -- and for word
+    -- for html & doc
     else
       if symbol == true then
-        return pandoc.Span("" .. my_abbreviation .. "   " .. my_explanation .. "",
-          {['custom-style']='Schwache Hervorhebung'})
+        return pandoc.Para({
+          pandoc.Emph(abbreviation_wo_math_html), "\t\t",
+          my_explanation
+        })
       else
-        return pandoc.Span("" .. my_abbreviation .. "   " .. my_explanation .. "")
+        return pandoc.Para({
+          pandoc.Strong(abbreviation_wo_math_html), "\t\t",
+          my_explanation
+        })
       end
     end
   end
